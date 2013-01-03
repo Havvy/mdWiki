@@ -1,0 +1,10 @@
+{
+  "author" : "Havvy",
+  "name": "mdWiki",
+  "description": "Markdown wiki written using Node.js",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x"
+  }
+}
