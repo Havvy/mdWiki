@@ -3,6 +3,10 @@ moving to a more advanced wiki. It's goals are to allow editing of pages
 using MarkDown, and provide the most useful set of special pages provided
 by MediaWiki.
 
+This is a draft document of features and whatnot. It'll probably be moved away
+from the README.md as progress occurs. Also, the license will either be BSD or
+Apache. I'm not sure which yet.
+
 These are non-goals:
 
 * Templates - This means don't use this for big projects. Or if you want 
@@ -39,3 +43,25 @@ The top level structure looks like this:
 * /special/
 * /image/
 * /%PAGE%/
+
+## Limitations of Page Names
+
+* No subpages via '/'. Sorry.
+* Cannot be one of "user", "special", or "image".
+* Case-insensitive.
+* ASCII Printable Characters
+
+The first limitation is because of all the special magic through the URL that
+this wiki does. I /should/ be using GET and POST variables here, but just to
+have some fun, I'm storing some of the important data in the URL under
+subnames. This limitation will not be in the successor wiki, whenever that
+will be.
+
+The second limitation is hopefully obvious. I think I can get rid of this by
+making the main namespace be called /wiki/ instead, but I want to keep the
+'View the damn page' URL as short as possible for this project.
+
+It is my opinion that the case-sensitivity of MediaWiki is a flaw. As such,
+I am not inheriting that flaw. All pages are case-insensitive. For now, I do
+not want to deal with Unicode. So pages must contain printable ASCII
+characters.
